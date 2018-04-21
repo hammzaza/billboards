@@ -6,8 +6,11 @@ module.exports = function(app,passport){
         res.render('create-account.ejs');
     });
     app.post('/sign-up-user', passport.authenticate('user-signup', {
-        successRedirect : '/',
-        failureRedirect : '/',
-        failureFlash : true
+        successRedirect : '/sign-in',
+        failureRedirect : '/sign-up',
+    }));
+    app.post('/sign-in-user', passport.authenticate('user-login', {
+        successRedirect : '/home',
+        failureRedirect : '/sign-in',
     }));
 };
