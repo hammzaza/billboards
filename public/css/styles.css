@@ -279,12 +279,20 @@ img {
        margin-top:15px;
        margin-bottom:15px;
     }
-        .signin form button {
-            border: none;
-            border-radius: 10px !important;
-            background-color: white;
-            margin:10px 15px;
-        }
+    .signin form button {
+        border: none;
+        border-radius: 10px !important;
+        background-color: white;
+        margin:10px 15px;
+    }
+    .signin form a {
+        border: none;
+        border-radius: 10px !important;
+        padding:5px;
+        background-color: white;
+        margin:10px 15px;
+    }
+
 
 
 .wbg {

@@ -16,12 +16,12 @@ app.use(passport.session());
 app.set('view-engine', '.ejs');
 app.set('views', 'src/views');
 
-require('./src/routes/mainRouter')(app);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
+require('./src/routes/mainRouter')(app);
+require('./src/routes/user-authentication')(app,passport);
 app.listen(port, function () {
     console.log("Listening on port " + port);
 });
