@@ -1,8 +1,5 @@
-var express = require ('express');
-var mainRouter = express.Router();
-
-mainRouter.get('/', function(req, res){
-    res.render('index.ejs');
-});
-
-module.exports = mainRouter;
+module.exports = function(app){
+    app.get('/',function(req,res){
+        res.render('index.ejs');
+    });
+};
