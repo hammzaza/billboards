@@ -8,6 +8,7 @@ var userSchema = mongoose.Schema({
     email:String,
     firstName:String,
     lastName:String,
+    check:Boolean
     
 });
 
