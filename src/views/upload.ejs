@@ -102,16 +102,11 @@
                 <div class="container upload">
                     <h2>Upload to Billboards</h2>
                     <div class="innerbox">
-                        <input id="uploadfile" type="file" class="fileUpload" />
+                        <input id="uploadfile" type="file" class="fileUpload" name="uploadlink" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci</p>
                     </div>
                 </div>
             </div>
-
-
-
-
-
             <div class="col-sm-2 collapsed" id="sidebar">
 
                 <ul>
@@ -128,84 +123,84 @@
         </div>
     </div>
 
-<div class="modal fade" id="modalDescriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Add Description of the Song</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body mx-3">
-                <div class="md-form mb-5">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <label data-error="wrong" data-success="right" for="defaultForm-text">Name</label>
-                    <input type="text" id="defaultForm-text" class="form-control validate" name="name">
+    <div class="modal fade" id="modalDescriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add Description of the Song</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-text">Name</label>
+                        <input type="text" id="defaultForm-text" class="form-control validate" name="name">
+                    </div>
 
-                <div class="md-form mb-4">
-                    <i class="fa fa-lock prefix grey-text"></i>
-                    <label data-error="wrong" data-success="right" for="defaultForm-Genre">Genre</label>
-                    <select class="form-control" id="sel1" name="genre">
-                        <option value="Rock" >Rock</option>
-                        <option value="Deep House">Deep House</option>
-                        <option value="World Reggae">World Reggae</option>
-                        <option value="Soul">Soul</option>
-                        <option value="World Punk Rock">World Punk Rock</option>
-                        <option value="Drum’n Bass">Drum'n Bass</option>
-                        <option value="Rythem">Rythem</option>
-                        <option value="Smooth Jazz">Smooth Jazz</option>
-                        <option value="Meditation">Meditation</option>
-                        <option value="Funk">Funk</option>
-                        <option value="Reggae">Reggae</option>
-                        <option value="House">House</option>
-                        <option value="Tango">Tango</option>
-                        <option value="Blues">Blues</option>
-                        <option value="Punk Rock">Punk Rock</option>
-                        <option value="Country">Country</option>
-                        <option value="Alternative">Alternative</option>
-                        <option value="Gospel">Gospel</option>
-                        <option value="Indie">Indie</option>
-                        <option value="Bass House">Bass House</option>
-                        <option value="Dance/ Edm">Dance/ Edm</option>
-                        <option value="Instrumental">Instrumental</option>
-                        <option value="Jazz">Jazz</option>
-                        <option value="Orchestral">Orchestral</option>
-                        <option value="Disco">Disco</option>
-                        <option value="Heavy Metal">Heavy Metal</option>
-                        <option value="Classical">Classical</option>
-                        <option value="Salsa">Salsa</option>
-                        <option value="Romantic">Romantic</option>
-                        <option value="Pop">Pop</option>
-                        <option value="Hip-Hop">Hip-Hop</option>
-                        <option value="Old School Hip Hop">Old School Hip Hop</option>
-                        <option value="Trap">Trap</option>
-                        <option value="Electro">Electro</option>
-                        <option value="R&B">R&B</option>
-                        <option value="Techno">Techno</option>
-                        <option value="Dubstep">Dubstep</option>
-                        <option value="Acapella">Acapella</option>
-                        <option value="Tropical">Tropical</option>
-                      </select>
+                    <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-Genre">Genre</label>
+                        <select class="form-control" id="sel1" name="genre">
+                            <option value="Rock" >Rock</option>
+                            <option value="Deep House">Deep House</option>
+                            <option value="World Reggae">World Reggae</option>
+                            <option value="Soul">Soul</option>
+                            <option value="World Punk Rock">World Punk Rock</option>
+                            <option value="Drum’n Bass">Drum'n Bass</option>
+                            <option value="Rythem">Rythem</option>
+                            <option value="Smooth Jazz">Smooth Jazz</option>
+                            <option value="Meditation">Meditation</option>
+                            <option value="Funk">Funk</option>
+                            <option value="Reggae">Reggae</option>
+                            <option value="House">House</option>
+                            <option value="Tango">Tango</option>
+                            <option value="Blues">Blues</option>
+                            <option value="Punk Rock">Punk Rock</option>
+                            <option value="Country">Country</option>
+                            <option value="Alternative">Alternative</option>
+                            <option value="Gospel">Gospel</option>
+                            <option value="Indie">Indie</option>
+                            <option value="Bass House">Bass House</option>
+                            <option value="Dance/ Edm">Dance/ Edm</option>
+                            <option value="Instrumental">Instrumental</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Orchestral">Orchestral</option>
+                            <option value="Disco">Disco</option>
+                            <option value="Heavy Metal">Heavy Metal</option>
+                            <option value="Classical">Classical</option>
+                            <option value="Salsa">Salsa</option>
+                            <option value="Romantic">Romantic</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Hip-Hop">Hip-Hop</option>
+                            <option value="Old School Hip Hop">Old School Hip Hop</option>
+                            <option value="Trap">Trap</option>
+                            <option value="Electro">Electro</option>
+                            <option value="R&B">R&B</option>
+                            <option value="Techno">Techno</option>
+                            <option value="Dubstep">Dubstep</option>
+                            <option value="Acapella">Acapella</option>
+                            <option value="Tropical">Tropical</option>
+                        </select>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-text">Description</label>
+                        <input type="text" id="defaultForm-text" class="form-control validate" name="description">
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-text">Tags</label>
+                        <input type="text" id="defaultForm-text" class="form-control validate" name="tags">
+                    </div>
                 </div>
-                <div class="md-form mb-5">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <label data-error="wrong" data-success="right" for="defaultForm-text">Description</label>
-                    <input type="text" id="defaultForm-text" class="form-control validate" name="description">
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default">Upload Song</button>
                 </div>
-                <div class="md-form mb-5">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <label data-error="wrong" data-success="right" for="defaultForm-text">Tags</label>
-                    <input type="text" id="defaultForm-text" class="form-control validate" name="tags">
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-default">Upload Song</button>
             </div>
         </div>
     </div>
-</div>
                 
     <script>
         $(document).ready(function () {
@@ -216,8 +211,8 @@
                 return false;
             });
             $('#uploadfile').change(function(){
+                alert($('#uploadfile'). val())
                 $('#modalDescriptionForm').modal();
-
             });
         });
     </script>
