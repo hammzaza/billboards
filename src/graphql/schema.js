@@ -7,7 +7,8 @@ import {
     GraphQLNonNull,
     GraphQLBoolean
 } from 'graphql';
-  
+var UserType = require('./schemas/user').user;
+var SongType = require('./schemas/songs').song;
 var User = require('../schemas/user');
 var Songs = require('../schemas/songs');
 
@@ -17,27 +18,14 @@ description: 'Root query object',
 fields: () => {
     return {
     users: {
-        type: new GraphQLList(User),
-        args: {
-            email: {
-                type: GraphQLString
-            }
-        },
-        resolve (root, params) {
-        return User.find({ email: params.email }).exec();
+        type: new GraphQLList(UserType),
+        resolve (root) {
+        return User.find().exec();
         }
     },
     Songs: {
-        type: new GraphQLList(Songs),
-        args:{
-            genre:{
-                type:GraphQLList
-            }
-        },
-        resolve (root, paras4) {
-            if (params.genre !="")
-                songss = Songs.find({genre:params.genre}).exec();
-            else
+        type: new GraphQLList(SongsType),
+        resolve (root) {
                 songss = UserModel.find().exec();
                 if (!songss) {
                     throw new Error('Error');
@@ -55,7 +43,7 @@ description: 'Functions to set stuff',
 fields () {
     return {
     addUser: {
-        type: User,
+        type: UserType,
         args: {
         firstName: {
             type: new GraphQLNonNull(GraphQLString)
@@ -88,7 +76,7 @@ fields () {
         }
     },
     addSong: {
-        type: Songs,
+        type: SongsType,
         args: {
             name: {
                 type: new GraphQLNonNull(GraphQLString)
@@ -126,6 +114,38 @@ fields () {
         if(!newUser)
                 throw new Error('user not added');
             return newUser;
+        }
+    },
+    getUser:{
+        type: UserType,
+        args: {
+        email: {
+        type: new GraphQLNonNull(GraphQLString),
+        }
+    },
+    resolve(root, params) {
+
+        const Users = UserModel.find({email:params.email}).exec();
+        if (!Users) {
+        throw new Error('Error');
+        }
+        return Users;
+    }
+    },
+    getSong:{
+        type: SongType,
+        args: {
+        genre: {
+        type: new GraphQLNonNull(GraphQLString),
+        }
+    },
+    resolve(root, params) {
+
+        const songs = Songs.find({genre:params.genre}).exec();
+        if (!songs) {
+        throw new Error('Error');
+        }
+        return songs;
         }
     }
     };

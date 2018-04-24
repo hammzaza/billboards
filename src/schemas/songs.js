@@ -11,12 +11,16 @@ var songsSchema = new Schema({
     required: true
   },
   description:{
-      type:String,
-      required:true
+    type:String,
+    required:true
   },
   tags:{
-      type:String,
-      required:true
+    type:String,
+    required:true
+  },
+  uploadlink:{
+    type:String,
+    required:true
   }
 });
 module.exports = mongoose.model('Songs', songsSchema);
