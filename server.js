@@ -2,6 +2,7 @@ var express = require('express');
 var ejs = require('ejs');
 var path = require('path');
 var bodyParser = require('body-parser');
+var graphqlHTTP = require("express-graphql");
 var mongoose = require('mongoose');
 var port = process.env.PORT || 8080;
 var app = express();
@@ -18,11 +19,17 @@ app.set('view-engine', '.ejs');
 app.set('views', 'src/views');
 var configDB = require('./src/config/mongodb');
 mongoose.connect(configDB);
-
-
 require('./src/config/passport')(passport);
 require('./src/routes/mainRouter')(app);
 require('./src/routes/user-authentication')(app,passport);
+
+app.use('/graphql', GraphHTTP({
+    schema: Schema,
+    pretty: true,
+    graphiql: true
+  }));
+
+
 app.listen(port, function () {
     console.log("Listening on port " + port);
 });
