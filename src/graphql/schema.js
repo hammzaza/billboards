@@ -22,20 +22,8 @@ fields: () => {
         resolve (root) {
         return User.find().exec();
         }
-    },
-    Songs: {
-        type: new GraphQLList(SongsType),
-        resolve (root) {
-                songss = UserModel.find().exec();
-                if (!songss) {
-                    throw new Error('Error');
-                }
-                return songss;
-        }
-    }
-    };
-}
-});
+    }};
+}});
 
 const Mutation = new GraphQLObjectType({
 name: 'Mutations',
@@ -140,8 +128,10 @@ fields () {
         }
     },
     resolve(root, params) {
-
-        const songs = Songs.find({genre:params.genre}).exec();
+        if(params.genre == '')
+            songs = Songs.find().exec();
+        else
+            songs = Songs.find({genre:params.genre}).exec();
         if (!songs) {
         throw new Error('Error');
         }
