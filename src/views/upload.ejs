@@ -136,13 +136,13 @@
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="defaultForm-text">Name</label>
-                        <input type="text" id="defaultForm-text" class="form-control validate" name="name">
+                        <input type="text" id="uploadname" class="form-control validate" name="name">
                     </div>
 
                     <div class="md-form mb-4">
                         <i class="fa fa-lock prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="defaultForm-Genre">Genre</label>
-                        <select class="form-control" id="sel1" name="genre">
+                        <select class="form-control" id="uploadgenre" name="genre">
                             <option value="Rock" >Rock</option>
                             <option value="Deep House">Deep House</option>
                             <option value="World Reggae">World Reggae</option>
@@ -187,16 +187,16 @@
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="defaultForm-text">Description</label>
-                        <input type="text" id="defaultForm-text" class="form-control validate" name="description">
+                        <input type="text" id="uploaddescription" class="form-control validate" name="description">
                     </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="defaultForm-text">Tags</label>
-                        <input type="text" id="defaultForm-text" class="form-control validate" name="tags">
+                        <input type="text" id="uploadtags" class="form-control validate" name="tags">
                     </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-default">Upload Song</button>
+                    <button class="btn btn-default" id="uploadsong">Upload Song</button>
                 </div>
             </div>
         </div>
@@ -204,6 +204,32 @@
                 
     <script>
         $(document).ready(function () {
+            $('#uploadsong').click(function(){
+                var uploadlink = $('#uploadfile'). val();
+                var name = $('#uploadname').val();
+                var genre = $('#uploadgenre').val();
+                var description = $('#uploaddescription').val();
+                var tags = $('#uploadtags').val();
+                var index = 0;
+                for(var i = 0; i < uploadlink.length; i++){
+                    if(uploadlink[i] == "\\"){
+                        index = i
+                    }
+                }
+                link = ".\\songs"+ uploadlink.slice(index)
+                alert(index)
+                alert(name)
+                alert(genre)
+                alert(description)
+                alert(tags)
+                alert(link)
+                $.ajax({
+                    method:'post',
+                    url:'/uploadsong',
+                    success: function(data){
+                    }
+                });
+            });
             $(".toggle-sidebar").click(function () {
                 $("#sidebar").toggleClass("collapsed");
                 $("#content").toggleClass("col-sm-12 col-sm-10");
@@ -211,7 +237,6 @@
                 return false;
             });
             $('#uploadfile').change(function(){
-                alert($('#uploadfile'). val())
                 $('#modalDescriptionForm').modal();
             });
         });

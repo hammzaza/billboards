@@ -2,25 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var songsSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  genre:{
-    type: String,
-    required: true
-  },
-  description:{
-    type:String,
-    required:true
-  },
-  tags:{
-    type:String,
-    required:true
-  },
-  uploadlink:{
-    type:String,
-    required:true
-  }
+  name:String,
+  genre:String,
+  description:String,
+  tags:String,
+  uploadlink:String
+
 });
 module.exports = mongoose.model('Songs', songsSchema);

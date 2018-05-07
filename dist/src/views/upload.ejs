@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style>
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .jumbotron {
+            margin-top: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">BillBoards <img style="display:inline;max-height:20px;" src="./img/logo.png" /></a>
+            </div>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                </div>
+            </form>
+            <ul class="nav navbar-nav">
+                <li><a href="/upload"><img src="./img/upload.png" /></a></li>
+                <li><a href="/home">Popular</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="category1.html">Pop</a></li>
+                        <li><a href="category2.html">Hip-Hop</a></li>
+                        <li><a href="category3.html">Old School Hip Hop</a></li>
+                        <li><a href="category4.html">Trap</a></li>
+                        <li><a href="category5.html">Electro</a></li>
+                        <li><a href="category6.html">R&B</a></li>
+                        <li><a href="category7.html">Techno</a></li>
+                        <li><a href="category8.html">Dubstep</a></li>
+                        <li><a href="category9.html">Acapella</a></li>
+                        <li><a href="category10.html">Tropical</a></li>
+                    </ul>
+                    <ul class="dropdown-menu" style="left:-160px;">
+                        <li><a href="category11.html">Bass House</a></li>
+                        <li><a href="category12.html">Dance/ Edm</a></li>
+                        <li><a href="category13.html">Instrumental</a></li>
+                        <li><a href="category14.html">Jazz</a></li>
+                        <li><a href="category15.html">Orchestral</a></li>
+                        <li><a href="category16.html">Disco</a></li>
+                        <li><a href="category17.html">Heavy Metal</a></li>
+                        <li><a href="category18.html">Classical</a></li>
+                        <li><a href="category19.html">Salsa</a></li>
+                        <li><a href="category20.html">Romantic</a></li>
+                    </ul>
+                    <ul class="dropdown-menu" style="left:-320px;">
+                        <li><a href="category21.html">Funk</a></li>
+                        <li><a href="category22.html">Reggae</a></li>
+                        <li><a href="category23.html">House</a></li>
+                        <li><a href="category24.html">Tango</a></li>
+                        <li><a href="category25.html">Blues</a></li>
+                        <li><a href="category26.html">Punk Rock</a></li>
+                        <li><a href="category27.html">Country</a></li>
+                        <li><a href="category28.html">Alternative</a></li>
+                        <li><a href="category29.html">Gospel</a></li>
+                        <li><a href="category30.html">Indie</a></li>
+                    </ul>
+                    <ul class="dropdown-menu" style="left:-480px;">
+                        <li><a href="category31.html">Rock</a></li>
+                        <li><a href="category32.html">Deep House</a></li>
+                        <li><a href="category33.html">World Reggae</a></li>
+                        <li><a href="category34.html">Trance</a></li>
+                        <li><a href="category35.html">Soul</a></li>
+                        <li><a href="category36.html">World Punk Rock</a></li>
+                        <li><a href="category37.html">Drum’n Bass</a></li>
+                        <li><a href="category38.html">Rythem</a></li>
+                        <li><a href="category39.html">Smooth Jazz</a></li>
+                        <li><a href="category40.html">Meditation</a></li>
+                    </ul>
+                </li>
+                <li><a class="toggle-sidebar" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row" id="row-main">
+            <div class="col-sm-12" id="content">
+                <div class="container upload">
+                    <h2>Upload to Billboards</h2>
+                    <div class="innerbox">
+                        <input id="uploadfile" type="file" class="fileUpload" name="uploadlink" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 collapsed" id="sidebar">
+
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="profile.html">Likes</a></li>
+                    <li><a href="profile.html">Favorites</a></li>
+                    <li><a href="profile.html">Playlist</a></li>
+                    <li><a href="popular.html">Music Video</a></li>
+                    <li><a href="index.html">Top Billboards</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDescriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add Description of the Song</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-text">Name</label>
+                        <input type="text" id="defaultForm-text" class="form-control validate" name="name">
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-Genre">Genre</label>
+                        <select class="form-control" id="sel1" name="genre">
+                            <option value="Rock" >Rock</option>
+                            <option value="Deep House">Deep House</option>
+                            <option value="World Reggae">World Reggae</option>
+                            <option value="Soul">Soul</option>
+                            <option value="World Punk Rock">World Punk Rock</option>
+                            <option value="Drum’n Bass">Drum'n Bass</option>
+                            <option value="Rythem">Rythem</option>
+                            <option value="Smooth Jazz">Smooth Jazz</option>
+                            <option value="Meditation">Meditation</option>
+                            <option value="Funk">Funk</option>
+                            <option value="Reggae">Reggae</option>
+                            <option value="House">House</option>
+                            <option value="Tango">Tango</option>
+                            <option value="Blues">Blues</option>
+                            <option value="Punk Rock">Punk Rock</option>
+                            <option value="Country">Country</option>
+                            <option value="Alternative">Alternative</option>
+                            <option value="Gospel">Gospel</option>
+                            <option value="Indie">Indie</option>
+                            <option value="Bass House">Bass House</option>
+                            <option value="Dance/ Edm">Dance/ Edm</option>
+                            <option value="Instrumental">Instrumental</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Orchestral">Orchestral</option>
+                            <option value="Disco">Disco</option>
+                            <option value="Heavy Metal">Heavy Metal</option>
+                            <option value="Classical">Classical</option>
+                            <option value="Salsa">Salsa</option>
+                            <option value="Romantic">Romantic</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Hip-Hop">Hip-Hop</option>
+                            <option value="Old School Hip Hop">Old School Hip Hop</option>
+                            <option value="Trap">Trap</option>
+                            <option value="Electro">Electro</option>
+                            <option value="R&B">R&B</option>
+                            <option value="Techno">Techno</option>
+                            <option value="Dubstep">Dubstep</option>
+                            <option value="Acapella">Acapella</option>
+                            <option value="Tropical">Tropical</option>
+                        </select>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-text">Description</label>
+                        <input type="text" id="defaultForm-text" class="form-control validate" name="description">
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-text">Tags</label>
+                        <input type="text" id="defaultForm-text" class="form-control validate" name="tags">
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default">Upload Song</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+    <script>
+        $(document).ready(function () {
+            $(".toggle-sidebar").click(function () {
+                $("#sidebar").toggleClass("collapsed");
+                $("#content").toggleClass("col-sm-12 col-sm-10");
+
+                return false;
+            });
+            $('#uploadfile').change(function(){
+                alert($('#uploadfile'). val())
+                $('#modalDescriptionForm').modal();
+            });
+        });
+    </script>
+
+</body>
+</html>

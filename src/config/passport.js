@@ -42,6 +42,7 @@ module.exports = function(passport) {
         passReqToCallback : true
     },
     function(req, email, password, done) {
+        getUsers();
         User.findOne({ 'email' :  email }, function(err, user) {
             if (err)
                 return done(err);
@@ -52,6 +53,5 @@ module.exports = function(passport) {
                 return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
             return done(null, user);
         });
-
     }));
 };
