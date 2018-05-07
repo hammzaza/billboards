@@ -7,6 +7,7 @@ module.exports = function(app,passport){
         song.description = req.body.description;
         song.tags = req.body.tags;
         song.uploadlink = req.body.link;
+        song.views = 0;
         song.save(function(err) {
             if (err)
                 throw err;

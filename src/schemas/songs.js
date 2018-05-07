@@ -6,7 +6,8 @@ var songsSchema = new Schema({
   genre:String,
   description:String,
   tags:String,
-  uploadlink:String
+  uploadlink:String,
+  views:Number
 
 });
 module.exports = mongoose.model('Songs', songsSchema);
