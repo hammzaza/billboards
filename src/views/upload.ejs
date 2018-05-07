@@ -217,15 +217,10 @@
                     }
                 }
                 link = ".\\songs"+ uploadlink.slice(index)
-                alert(index)
-                alert(name)
-                alert(genre)
-                alert(description)
-                alert(tags)
-                alert(link)
                 $.ajax({
                     method:'post',
                     url:'/uploadsong',
+                    data:{link:uploadlink,name:name,genre:genre,description:description,tags:tags},
                     success: function(data){
                     }
                 });
@@ -233,7 +228,6 @@
             $(".toggle-sidebar").click(function () {
                 $("#sidebar").toggleClass("collapsed");
                 $("#content").toggleClass("col-sm-12 col-sm-10");
-
                 return false;
             });
             $('#uploadfile').change(function(){
