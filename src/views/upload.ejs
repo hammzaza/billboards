@@ -220,8 +220,10 @@
                 $.ajax({
                     method:'post',
                     url:'/uploadsong',
-                    data:{link:uploadlink,name:name,genre:genre,description:description,tags:tags},
+                    data:{link:link,name:name,genre:genre,description:description,tags:tags},
                     success: function(data){
+                        alert('successfully added');
+                        window.location.reload();
                     }
                 });
             });
