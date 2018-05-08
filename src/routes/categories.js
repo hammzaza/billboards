@@ -478,4 +478,3 @@ function username(s){
     else
         return 'Profile';
 }
-
