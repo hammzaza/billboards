@@ -1,6 +1,8 @@
 module.exports = function(app,passport){
     app.get('/sign-in',function(req,res){
-        res.render('sign-in.ejs');
+        if(checkuser(req.user))
+            res.render('index.ejs');
+        res.render('sign-in.ejs')
     });
     app.get('/sign-up',function(req,res){
         res.render('create-account.ejs');
@@ -14,3 +16,9 @@ module.exports = function(app,passport){
         failureRedirect : '/sign-in',
     }));
 };
+function checkuser(s){
+    if(s)
+        return true;
+    else
+        return false;
+}
