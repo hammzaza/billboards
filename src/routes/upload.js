@@ -2,6 +2,7 @@ var Songs = require('../schemas/songs');
 module.exports = function(app,passport){
     app.post('/uploadsong',isLoggedIn,function(req,res){
         var song = new Songs();
+        song.uploader = req.user.username;
         song.name = req.body.name;
         song.genre = req.body.genre;
         song.description = req.body.description;

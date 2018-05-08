@@ -3,7 +3,7 @@ module.exports = function(app){
         res.render('index.ejs',{check:checkuser(req.user),username:username(req.user)});
     });
     app.get('/upload',function(req,res){
-        res.render('upload.ejs');
+        res.render('upload.ejs',{check:checkuser(req.user),username:username(req.user)});
     });
 };
 function checkuser(s){
