@@ -90,7 +90,17 @@
                             <li><a href="/audiobook">AudioBook</a></li>    
                         </ul>
                     </li>
-                <li><a class="wbg" href="sign-in.html">Sign In</a></li><li><a class="wbg" href="create-account.html">Create Account</a></li><li><a class="toggle-sidebar" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+                    <% if (!check){ %>
+                        <li><a class="wbg" href="/sign-in">Sign In</a></li>
+                        <li><a class="wbg" href="/sign-up">Create Account</a></li>
+                        <li><a href="/sign-in"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+                    <% } 
+                    else
+                        {%> 
+                    <li><a class="toggle-sidebar" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+                        <%}
+                    %>
+                    
             </ul>
         </div>
     </nav>
