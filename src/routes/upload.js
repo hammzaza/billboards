@@ -1,13 +1,16 @@
+var path = require('path');
 var Songs = require('../schemas/songs');
 module.exports = function(app,passport){
-    app.post('/uploadsong',isLoggedIn,function(req,res){
+    app.post('/uploadsong',function(req,res){
         var song = new Songs();
-        song.uploader = req.user.username;
+        song.uploader = 'Hamza';
         song.name = req.body.name;
         song.genre = req.body.genre;
         song.description = req.body.description;
         song.tags = req.body.tags;
-        song.uploadlink = req.body.link;
+        link = "/songs/"+req.body.link;
+        song.uploadlink = link;
+        console.log(song.uploadlink);
         song.views = 0;
         song.save(function(err) {
             if (err)

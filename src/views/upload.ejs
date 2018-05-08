@@ -244,7 +244,7 @@
                         index = i
                     }
                 }
-                link = ".\\songs"+ uploadlink.slice(index)
+                link = uploadlink.slice(index+1)
                 $.ajax({
                     method:'post',
                     url:'/uploadsong',

@@ -1,12 +1,20 @@
 var Songs = require('../schemas/songs');
-
+var song = {
+  name: ' ',
+  genre: ' ',
+  upload: ' ',
+  description: ' ',
+  tags: ' ',
+  uploadlink: ' ',
+  views:0
+};
 module.exports = function(app){
     app.get('/pop',function(req,res){
         //Pop
         //category1
         findsongs('Pop',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category1.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category1.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -17,7 +25,7 @@ module.exports = function(app){
         //category2
         findsongs('Hip-hop',function(songs){
             if(songs ==null)
-                song = new Songs();
+                 
                 res.render('category2.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category2.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -27,7 +35,7 @@ module.exports = function(app){
         //category3
         findsongs('Old School Hip Hop',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category3.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category3.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -37,7 +45,7 @@ module.exports = function(app){
         //category4
         findsongs('Trap',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category4.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category4.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -47,7 +55,7 @@ module.exports = function(app){
         //category5
         findsongs('Electro',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category5.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category5.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -57,7 +65,7 @@ module.exports = function(app){
         //category6
         findsongs('R&B',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category6.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category6.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -67,7 +75,7 @@ module.exports = function(app){
         //category7
         findsongs('Techno',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category7.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category7.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -77,7 +85,7 @@ module.exports = function(app){
         //category8
         findsongs('Dubstep',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category8.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category8.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -88,7 +96,7 @@ module.exports = function(app){
         //category9
         findsongs('capella',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category9.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category9.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -98,7 +106,7 @@ module.exports = function(app){
         //category10
         findsongs('Tropical',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category10.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category10.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -108,7 +116,7 @@ module.exports = function(app){
         //category11
         findsongs('Bass House',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category11.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category11.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -118,7 +126,7 @@ module.exports = function(app){
         //category12
         findsongs('Dance',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category12.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category12.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -128,7 +136,7 @@ module.exports = function(app){
         //category13
         findsongs('Instrumental',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category13.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category13.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -139,7 +147,7 @@ module.exports = function(app){
     //category14
         findsongs('Jazz',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category14.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category14.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -149,7 +157,7 @@ module.exports = function(app){
     //category15
         findsongs('Orchestral',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category15.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category15.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -159,7 +167,7 @@ module.exports = function(app){
         //category16
         findsongs('Disco',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category16.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category16.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -169,7 +177,7 @@ module.exports = function(app){
         //category17
         findsongs('Heavy Metal',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category17.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category17.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -180,7 +188,7 @@ module.exports = function(app){
         //category18
         findsongs('Classical',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category18.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category18.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -190,7 +198,7 @@ module.exports = function(app){
         //category19
         findsongs('Salsa',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category19.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category19.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -200,7 +208,7 @@ module.exports = function(app){
         //category20
         findsongs('Romantic',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category20.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category20.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -210,7 +218,7 @@ module.exports = function(app){
         //category21
         findsongs('Funk',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category21.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category21.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -220,7 +228,7 @@ module.exports = function(app){
         //category22
         findsongs('Reggae',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category22.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category22.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -230,7 +238,7 @@ module.exports = function(app){
         //category23
         findsongs('House',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category23.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category23.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -240,7 +248,7 @@ module.exports = function(app){
         //category24
         findsongs('Tango',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category24.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category24.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -251,7 +259,7 @@ module.exports = function(app){
         //category25
         findsongs('Blues',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category25.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category25.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -261,7 +269,7 @@ module.exports = function(app){
         //category26
         findsongs('Punk Rock',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category26.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category27.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -271,7 +279,7 @@ module.exports = function(app){
         //category27
         findsongs('Country',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category27.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category27.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -281,7 +289,7 @@ module.exports = function(app){
         //category28
         findsongs('Alternative',function(songs){
             if(songs == null)
-            song = new Songs();
+             
             res.render('category28.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
         res.render('category28.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
     });
@@ -291,7 +299,7 @@ module.exports = function(app){
             //category29
         findsongs('Gospel',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category29.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category29.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -301,7 +309,7 @@ module.exports = function(app){
             //category30
         findsongs('Indie',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category30.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category30.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -311,7 +319,7 @@ module.exports = function(app){
         //category31
         findsongs('Rock',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category31.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category31.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -322,7 +330,7 @@ module.exports = function(app){
         //category32
         findsongs('Deep House',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category32.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category32.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -332,7 +340,7 @@ module.exports = function(app){
         //category33
         findsongs('World Reggae',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category33.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category33.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -342,7 +350,7 @@ module.exports = function(app){
         //category34
         findsongs('Trance',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category34.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category34.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -352,7 +360,7 @@ module.exports = function(app){
         //category35
         findsongs('Soul',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category35.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category35.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -362,7 +370,7 @@ module.exports = function(app){
         //category36
         findsongs('World Punk Rock',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category36.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category36.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -372,7 +380,7 @@ module.exports = function(app){
         //category37
         findsongs('Drum\'n Bass',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category37.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category37.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -382,7 +390,7 @@ module.exports = function(app){
         //category38
         findsongs('Rythem',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category38.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category38.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -393,7 +401,7 @@ module.exports = function(app){
         //category39
         findsongs('Smooth Jazz',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category39.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category39.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -403,7 +411,7 @@ module.exports = function(app){
         //category40
         findsongs('Meditation',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category40.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category40.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -412,7 +420,7 @@ module.exports = function(app){
     app.get('/opera',function(req,res){
         findsongs('Opera',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category41.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category41.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -420,7 +428,7 @@ module.exports = function(app){
     app.get('/chill',function(req,res){
         findsongs('Chill',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category42.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category42.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -428,7 +436,7 @@ module.exports = function(app){
     app.get('/sleep',function(req,res){
         findsongs('Sleep',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category43.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category43.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -436,7 +444,7 @@ module.exports = function(app){
     app.get('/exercise',function(req,res){
         findsongs('Exercise',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category44.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category44.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -444,7 +452,7 @@ module.exports = function(app){
     app.get('/latin',function(req,res){
         findsongs('Latin',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category45.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category45.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
@@ -452,7 +460,7 @@ module.exports = function(app){
     app.get('/audiobook',function(req,res){
         findsongs('AudioBook',function(songs){
             if(songs == null)
-                song = new Songs();
+                 
                 res.render('category46.ejs',{check:checkuser(req.user),username:username(req.user),songs:song});
             res.render('category46.ejs',{check:checkuser(req.user),username:username(req.user),songs:songs});
         });
