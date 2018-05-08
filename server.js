@@ -20,7 +20,7 @@ var configDB = require('./src/config/mongodb');
 mongoose.connect(configDB);
 require('./src/config/passport')(passport);
 require('./src/routes/mainRouter')(app);
-require('./src/routes/user-authentication')(app);
+require('./src/routes/user-authentication')(app,passport);
 require('./src/routes/upload')(app,passport);
 require('./src/routes/categories')(app);
 require('./src/routes/profile')(app);
