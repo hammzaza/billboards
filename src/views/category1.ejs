@@ -19,7 +19,7 @@
                 </div>
             </form>
             <ul class="nav navbar-nav">
-                <li><a href="upload.html"><img src="./img/upload.png" /></a></li>
+                <li><a href="/upload"><img src="./img/upload.png" /></a></li>
                 <li><a href="/">Popular</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pop <b class="caret"></b></a>
@@ -105,27 +105,17 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Daily</th>
-                                <th>Weekly</th>
-                                <th>Monthly</th>
-                                <th>Yearly</th>
+                                <th>Name</th>
+                                <th>Link</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <%for (var i = 0 ; i < songs.length;i++){%>
                             <tr>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html"> john@example.com</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-
+                                <td><%=songs[i].name%></td>
+                                <td><a href="/songs/<%=songs[i]._id%>">For song</a></td>
                             </tr>
-                            <tr>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html"> john@example.com</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-
-                            </tr>
+                            <%}%>
                         </tbody>
                     </table>
                 </div>

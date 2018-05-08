@@ -1,4 +1,5 @@
 var Songs = require('../schemas/songs');
+var ObjectId = require('mongodb').ObjectID;
 module.exports = function(app){
     app.get('/',function(req,res){
         Songs.find({},function(err,results){
@@ -15,6 +16,15 @@ module.exports = function(app){
     });
     app.get('/upload',function(req,res){
         res.render('upload.ejs',{check:checkuser(req.user),username:username(req.user)});
+    });
+    app.get('/songs/:id',function(req,res){
+        id = new ObjectId(req.params.id);
+        Songs.findById(id,function(err,result){
+            if(err)
+                throw err;
+            res.render('songlink.ejs',{song:result});
+        });
+        
     });
 };
 function checkuser(s){

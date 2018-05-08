@@ -103,32 +103,22 @@
             <div class="col-sm-12" id="content">
 
                 <div class="container" style="margin-top:100px;">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Daily</th>
-                                <th>Weekly</th>
-                                <th>Monthly</th>
-                                <th>Yearly</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html"> john@example.com</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-
-                            </tr>
-                            <tr>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-                                <td><a href="songlink.html"> john@example.com</a></td>
-                                <td><a href="songlink.html">Sample text</a></td>
-
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%for (var i = 0 ; i < songs.length;i++){%>
+                                    <tr>
+                                        <td><%=songs[i].name%></td>
+                                        <td><a href="/songs/<%=songs[i]._id%>">For song</a></td>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                            </table>
                 </div>
             </div>
 

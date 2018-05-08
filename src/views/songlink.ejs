@@ -5,13 +5,7 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
     <link rel="stylesheet" href="./css/styles.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <style>
 
@@ -23,7 +17,6 @@
         .jumbotron {
             margin-top: 30px;
         }
-
 
     </style>
 </head>
@@ -103,16 +96,8 @@
                             <li><a href="/audiobook">AudioBook</a></li>    
                         </ul>
                 </li>
-                <% if (!check){ %>
-                    <li><a class="wbg" href="/sign-in">Sign In</a></li>
-                    <li><a class="wbg" href="/sign-up">Create Account</a></li>
-                    <li><a href="/sign-in"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
-                <% } 
-                else
-                    {%> 
                 <li><a class="toggle-sidebar" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
-                    <%}
-                %>
+                
                 
             </ul>
         </div>
@@ -125,17 +110,16 @@
                 </div>
 
                 <div class="container" style="margin-top:100px;">
-                    <!--<iframe width="420" height="315"
-                            src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>-->
+                        <div class="col-sm-12" id="content">
+                                <p><%=song.name%></p>
+                                <audio controls preload="metadata">
+                                    <source src="<%=song.uploadlink%>" type="audio/mpeg">
+                                </audio>
+                                <p><%=song.description%></p>                  
+                        </div>
                 </div>
             </div>
-
-
-
-
-
             <div class="col-sm-2 collapsed" id="sidebar">
-
                 <ul>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/profile">Likes</a></li>
