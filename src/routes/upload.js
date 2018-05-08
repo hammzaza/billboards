@@ -1,6 +1,6 @@
 var Songs = require('../schemas/songs');
 module.exports = function(app,passport){
-    app.post('/uploadsong',function(req,res){
+    app.post('/uploadsong',isLoggedIn,function(req,res){
         var song = new Songs();
         song.name = req.body.name;
         song.genre = req.body.genre;
@@ -15,3 +15,9 @@ module.exports = function(app,passport){
         });
     });
 };
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    else
+        res.redirect('/');
+}

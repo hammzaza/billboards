@@ -22,6 +22,7 @@ require('./src/config/passport')(passport);
 require('./src/routes/mainRouter')(app);
 require('./src/routes/user-authentication')(app,passport);
 require('./src/routes/upload')(app,passport);
+require('./src/routes/categories')(app);
 app.listen(port, function () {
     console.log("Listening on port " + port);
 });
