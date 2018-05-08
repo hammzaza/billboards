@@ -1,4 +1,5 @@
 var Songs = require('../schemas/songs');
+
 module.exports = function(app){
     app.get('/pop',function(req,res){
         //Pop
@@ -81,6 +82,7 @@ module.exports = function(app){
             res.render('category8.ejs',{songs:songs});
         });
     });
+    
     app.get('/acapella',function(req,res){
         //Acapella
         //category9
@@ -131,6 +133,7 @@ module.exports = function(app){
             res.render('category13.ejs',{songs:songs});
         });
     });
+    
     app.get('/jazz',function(req,res){
     //     Jazz
     //category14
@@ -171,6 +174,7 @@ module.exports = function(app){
             res.render('category17.ejs',{songs:songs});
         });
     });
+    
     app.get('/classical',function(req,res){
         //Classical
         //category18
@@ -241,6 +245,7 @@ module.exports = function(app){
             res.render('category24.ejs',{songs:songs});
         });
     });
+    
     app.get('/blues',function(req,res){
         //Blues
         //category25
@@ -311,6 +316,7 @@ module.exports = function(app){
             res.render('category31.ejs',{songs:songs});
         });
     });
+    
     app.get('/deep-house',function(req,res){
         //Deep House
         //category32
@@ -381,6 +387,7 @@ module.exports = function(app){
             res.render('category38.ejs',{songs:songs});
         });
     });
+    
     app.get('/smooth-jazz',function(req,res){
         //Smooth Jazz
         //category39
@@ -401,6 +408,56 @@ module.exports = function(app){
             res.render('category40.ejs',{songs:songs});
         });
     });
+    
+    app.get('/opera',function(req,res){
+        findsongs('Opera',function(songs){
+            if(songs == null)
+                song = new Songs();
+                res.render('category41.ejs',{songs:song});
+            res.render('category41.ejs',{songs:songs});
+        });
+    });
+    app.get('/chill',function(req,res){
+        findsongs('Chill',function(songs){
+            if(songs == null)
+                song = new Songs();
+                res.render('category42.ejs',{songs:song});
+            res.render('category42.ejs',{songs:songs});
+        });
+    });
+    app.get('/sleep',function(req,res){
+        findsongs('Sleep',function(songs){
+            if(songs == null)
+                song = new Songs();
+                res.render('category43.ejs',{songs:song});
+            res.render('category43.ejs',{songs:songs});
+        });
+    });
+    app.get('/exercise',function(req,res){
+        findsongs('Exercise',function(songs){
+            if(songs == null)
+                song = new Songs();
+                res.render('category44.ejs',{songs:song});
+            res.render('category44.ejs',{songs:songs});
+        });
+    });
+    app.get('/latin',function(req,res){
+        findsongs('Latin',function(songs){
+            if(songs == null)
+                song = new Songs();
+                res.render('category45.ejs',{songs:song});
+            res.render('category45.ejs',{songs:songs});
+        });
+    });
+    app.get('/audiobook',function(req,res){
+        findsongs('AudioBook',function(songs){
+            if(songs == null)
+                song = new Songs();
+                res.render('category46.ejs',{songs:song});
+            res.render('category46.ejs',{songs:songs});
+        });
+    });
+    
 };
 function findsongs(query,callback){
     Songs.find({genre:query},function(err,result){
