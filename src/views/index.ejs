@@ -108,14 +108,20 @@
     <div class="container-fluid">
         <div class="row" id="row-main">
             <%for(var i = 0; i<songs.length;i++){%> 
-            <div class="col-sm-12" id="content">
+            <div class="col-sm-6" id="songcontent">
                 <p><%=songs[i].name%></p>
                 <audio controls preload="metadata">
                     <source src="<%=songs[i].uploadlink%>" type="audio/mpeg">
                 </audio>
                 <p><%=songs[i].description%></p>                  
             </div>
-            <%}%>
+            <%if(check){%>
+            <div class = "col-sm-6" id ="content">
+                <p style="display:hidden" class="siblingg"><%=songs[i]._id%></p>
+                <button style="display:inline;"class="btn-primary" id="voteup">Vote Up</button>
+                <button class="btn-danger" id="votedown">Vote Down</button>
+            </div>
+            <%}}%>
             <div class="col-sm-2 collapsed" id="sidebar">   
                     <ul>
                         <li><a href="/profile"><%=username%></a></li>
@@ -131,13 +137,41 @@
     </div>
 
     <script>
+        
         $(document).ready(function () {
+            var check = true;
             $(".toggle-sidebar").click(function () {
                 $("#sidebar").toggleClass("collapsed");
                 $("#content").toggleClass("col-sm-12 col-sm-10");
                 return false;
             });
+            $('#voteup').click(function(){
+                if(!check){
+                    id = $(this).siblings('.siblingg').html();
+                    $.ajax({
+                      method:'put',
+                      url:'/voteup/'+id,
+                      success:function(success){
+
+                      }  
+                    });
+                };
+            });
+            $('#voteup').click(function(){
+                if(!check){
+                    id = $(this).siblings('.siblingg').html();
+                    $.ajax({
+                      method:'put',
+                      url:'/votedown/'+id,
+                      success:function(success){
+                          
+                      }  
+                    });
+                };
+            });
         });
+        
+        
     </script>
 </body>
 </html>
