@@ -21,9 +21,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">BillBoards <img style="display:inline;max-height:20px;" src="./img/logo.png" /></a>
             </div>
-            <form class="navbar-form navbar-left" action="/action_page.php">
+            <form class="navbar-form navbar-left" method="post" action="/search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <input type="text" class="form-control" name="query" placeholder="Search" name="search">
+                    <button type="submit"><span class="glyphicon glyphicon-search"></button>
                 </div>
             </form>
             <ul class="nav navbar-nav">
@@ -107,7 +108,14 @@
     </nav>
     <div class="container-fluid">
         <div class="row" id="row-main">
-            <%for(var i = 0; i<songs.length;i++){%> 
+            <%
+            if(songs.length == 0){ %>
+                <div class="col-sm-6" id="songcontent">
+                    <p>No result found</p>    
+                </div>
+            <%}
+            else{
+            for(var i = 0; i<songs.length;i++){%> 
             <div class="col-sm-6" id="songcontent">
                 <p><%=songs[i].name%></p>
                 <audio controls preload="metadata">
@@ -121,7 +129,7 @@
                 <button style="display:inline;"class="btn-primary" id="voteup">Vote Up</button>
                 <button class="btn-danger" id="votedown">Vote Down</button>
             </div>
-            <%}}%>
+            <%}}}%>
             <div class="col-sm-2 collapsed" id="sidebar">   
                     <ul>
                         <li><a href="/profile"><%=username%></a></li>
@@ -168,6 +176,9 @@
                       }  
                     });
                 };
+            });
+            $('elementName').keyup(function() {
+                alert("Key up detected");
             });
         });
         

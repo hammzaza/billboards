@@ -5,7 +5,7 @@ module.exports = function(app,passport){
         res.render('sign-in.ejs');
     });
     app.get('/sign-up',function(req,res){
-        res.render('create-account.ejs');
+        res.render('create-account.ejs',{check:checkuser(req.user)});
     });
     app.post('/sign-up-user', passport.authenticate('user-signup', {
         successRedirect : '/sign-in',
