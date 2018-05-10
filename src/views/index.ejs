@@ -126,8 +126,8 @@
             <%if(check){%>
             <div class = "col-sm-6" id ="content">
                 <p style="display:hidden" class="siblingg"><%=songs[i]._id%></p>
-                <button style="display:inline;"class="btn-primary" id="voteup">Vote Up</button>
-                <button class="btn-danger" id="votedown">Vote Down</button>
+                <button style="display:inline;"class="btn-primary voteup">Vote Up</button>
+                <button class="btn-danger votedown">Vote Down</button>
             </div>
             <%}}}%>
             <div class="col-sm-2 collapsed" id="sidebar">   
@@ -153,7 +153,7 @@
                 $("#content").toggleClass("col-sm-12 col-sm-10");
                 return false;
             });
-            $('#voteup').click(function(){
+            $('.voteup').click(function(){
                 if(!check){
                     id = $(this).siblings('.siblingg').html();
                     $.ajax({
@@ -165,7 +165,7 @@
                     });
                 };
             });
-            $('#voteup').click(function(){
+            $('.votedown').click(function(){
                 if(!check){
                     id = $(this).siblings('.siblingg').html();
                     $.ajax({
